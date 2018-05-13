@@ -18,45 +18,45 @@ public class CustomID extends Exception {//this class is expansion of Exception.
 
 		else {//if not,
 			this.name = str;//putting value.
-			System.out.println("Name is valid");
-			System.out.println("Name: " + this.name);
-			state++;
+			System.out.println("Name is valid");//prints this line.
+			System.out.println("Name: " + this.name);//prints this line.
+			state++;//plus one to "state"
 		}
 	}
 
 
 
-	public void set_age(int num) throws Exception
+	public void set_age(int num) throws Exception//throws result to Exception.
 	{
-		if(num < 18) {
-			state = 1;
-			throw new Exception("You are too young! Try again!");
+		if(num < 18) {//condition.
+			state = 1;//puts 1 to "state"
+			throw new Exception("You are too young! Try again!");//prints this exception message.
 		}
-		else {
-			this.age = num;
-			System.out.println("Age is valid");
-			System.out.println("Age: " + this.age);
-			state++;
+		else {//if not,
+			this.age = num;//puts value of "num" to this variable "age"
+			System.out.println("Age is valid");//prints this line.
+			System.out.println("Age: " + this.age);//prints this line.
+			state++;//plus one to "state".
 		}
 	}
 
-	public void set_race(String race) throws Exception{
-		for(int i = 0; i < races.length; i++)
+	public void set_race(String race) throws Exception{//throws result to Exceptino.
+		for(int i = 0; i < races.length; i++)//loop.
 		{
-			if(races[i].equals(race)) {
-				this.race = races[i];
-				System.out.println("Race is valid");
-				System.out.println("Race: " + races[i]);
-				state = 0;
-				return;
+			if(races[i].equals(race)) {//condition.
+				this.race = races[i];//puts value of i-th "reces" array to this variable "race"
+				System.out.println("Race is valid");//prints this line.
+				System.out.println("Race: " + races[i]);//prints this line.
+				state = 0;//set "state" to 0.
+				return;//returns.
 			}
 		}
-		state = 2;
-		throw new Exception("Human! Try again.");
+		state = 2;//set "state" to 2
+		throw new Exception("Human! Try again.");//prints this exception message.
 	}
-	public int getState()
+	public int getState()//a constructor
 	{
-		return state;
+		return state;//returns "state"
 	}
 
 }
